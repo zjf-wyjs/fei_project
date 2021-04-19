@@ -2,6 +2,8 @@ package plus.feifei.common.utils;
 
 import plus.feifei.data.entity.UserEntity;
 
+import java.util.Objects;
+
 /**
  * 2 * @Author: feifei
  * 3 * @Date: 2021/4/19 21:05
@@ -9,6 +11,15 @@ import plus.feifei.data.entity.UserEntity;
  */
 public class UserContext {
     private static final ThreadLocal<UserEntity> context = new ThreadLocal<UserEntity>();
+
+    /**
+     * 当前是否登录，如果是代表已经登录
+     * @return 是否登录
+     */
+    public static boolean isLogin(){
+        UserEntity userEntity = context.get();
+        return Objects.nonNull(userEntity);
+    }
 
     /**
      * 存放用户信息
