@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * 数据库接口
  *
- * @author Mark sunlightcs@gmail.com
+ * 
  * @since 2018-07-24
  */
 public interface GeneratorDao {

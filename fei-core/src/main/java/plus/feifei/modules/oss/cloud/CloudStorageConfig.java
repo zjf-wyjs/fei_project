@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+
 
 package plus.feifei.modules.oss.cloud;
 
@@ -23,7 +17,7 @@ import java.io.Serializable;
 /**
  * 云存储配置信息
  *
- * @author Mark sunlightcs@gmail.com
+ * 
  */
 @Data
 public class CloudStorageConfig implements Serializable {

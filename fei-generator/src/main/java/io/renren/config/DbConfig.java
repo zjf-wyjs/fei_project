@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Primary;
 /**
  * 数据库配置
  *
- * @author Mark sunlightcs@gmail.com
+ * 
  */
 @Configuration
 public class DbConfig {
