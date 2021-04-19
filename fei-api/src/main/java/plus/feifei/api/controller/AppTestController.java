@@ -9,6 +9,7 @@ import plus.feifei.api.interceptor.AuthorizationInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.RequestAttributes;
+import plus.feifei.common.utils.HttpContextUtils;
 import plus.feifei.common.utils.R;
 import plus.feifei.data.entity.UserEntity;
 import io.swagger.annotations.Api;
@@ -23,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * APP测试接口
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/app")
@@ -49,8 +50,8 @@ public class AppTestController {
 
     @GetMapping("notToken")
     @ApiOperation("忽略Token验证测试")
-    public R notToken(HttpServletRequest request){
-        Object token = request.getAttribute("token");
+    public R notToken(@LoginUser UserEntity userEntity){
+        String token = HttpContextUtils.getHttpServletRequest().getHeader("token");
         System.out.println(token);
         return R.ok().put("msg", "无需token也能访问。。。");
     }
