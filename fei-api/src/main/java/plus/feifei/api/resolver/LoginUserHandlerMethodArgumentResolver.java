@@ -3,7 +3,7 @@
 package plus.feifei.api.resolver;
 
 import plus.feifei.api.adnnotation.LoginUser;
-import plus.feifei.data.entity.UserEntity;
+import plus.feifei.common.entity.UserEntity;
 import plus.feifei.api.interceptor.AuthorizationInterceptor;
 import plus.feifei.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 /**
  * 有@LoginUser注解的方法参数，注入当前登录用户
  *
- * 
+ *
  */
 @Component
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {

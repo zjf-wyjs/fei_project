@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 权限(Token)验证
  *
- * 
+ *
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
@@ -54,6 +54,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
         }
 
         Claims claims = jwtUtils.getClaimByToken(token);
+        System.out.println(claims);
         if(claims == null || jwtUtils.isTokenExpired(claims.getExpiration())){
             throw new RRException(jwtUtils.getHeader() + "失效，请重新登录", HttpStatus.UNAUTHORIZED.value());
         }

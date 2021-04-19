@@ -5,7 +5,7 @@ package plus.feifei.api.controller;
 
 import plus.feifei.common.utils.R;
 import plus.feifei.common.validator.ValidatorUtils;
-import plus.feifei.data.entity.UserEntity;
+import plus.feifei.common.entity.UserEntity;
 import plus.feifei.data.vo.RegisterForm;
 import plus.feifei.data.service.UserService;
 import io.swagger.annotations.Api;
@@ -22,7 +22,7 @@ import java.util.Date;
 /**
  * 注册
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/app")

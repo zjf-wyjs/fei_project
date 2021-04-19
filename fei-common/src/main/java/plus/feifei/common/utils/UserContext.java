@@ -1,6 +1,6 @@
 package plus.feifei.common.utils;
 
-import plus.feifei.data.entity.UserEntity;
+import plus.feifei.common.entity.UserEntity;
 
 import java.util.Objects;
 
