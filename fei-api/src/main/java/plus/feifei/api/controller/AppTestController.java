@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import plus.feifei.common.utils.UserContext;
 
 /**
  * APP测试接口
@@ -48,9 +49,7 @@ public class AppTestController {
 
     @GetMapping("notToken")
     @ApiOperation("忽略Token验证测试")
-    public R notToken(@LoginUser UserEntity userEntity){
-        String token = HttpContextUtils.getHttpServletRequest().getHeader("token");
-        System.out.println(token);
+    public R notToken(){
         return R.ok().put("msg", "无需token也能访问。。。");
     }
 

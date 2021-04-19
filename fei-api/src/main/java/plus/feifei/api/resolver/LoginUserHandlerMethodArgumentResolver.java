@@ -5,6 +5,7 @@ package plus.feifei.api.resolver;
 import plus.feifei.api.adnnotation.LoginUser;
 import plus.feifei.common.entity.UserEntity;
 import plus.feifei.api.interceptor.AuthorizationInterceptor;
+import plus.feifei.common.utils.UserContext;
 import plus.feifei.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -40,8 +41,8 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
         }
 
         //获取用户信息
-        UserEntity user = userService.getById((Long)object);
-
+//        UserEntity user = userService.getById((Long)object);
+        UserEntity user = UserContext.get();
         return user;
     }
 }
