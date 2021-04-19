@@ -1,6 +1,6 @@
 
 
-package plus.feifei.data.entity;
+package plus.feifei.common.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 用户
  *
- * 
+ *
  */
 @Data
 @TableName("tb_user")

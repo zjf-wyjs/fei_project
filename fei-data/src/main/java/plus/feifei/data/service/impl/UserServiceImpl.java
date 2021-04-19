@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import plus.feifei.common.utils.RRException;
 import plus.feifei.common.validator.Assert;
 import plus.feifei.data.dao.UserDao;
-import plus.feifei.data.entity.UserEntity;
+import plus.feifei.common.entity.UserEntity;
 import plus.feifei.data.service.UserService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;

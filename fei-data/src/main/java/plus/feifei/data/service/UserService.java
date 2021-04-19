@@ -4,13 +4,13 @@ package plus.feifei.data.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import plus.feifei.data.entity.UserEntity;
+import plus.feifei.common.entity.UserEntity;
 import plus.feifei.data.vo.LoginForm;
 
 /**
  * 用户
  *
- * 
+ *
  */
 public interface UserService extends IService<UserEntity> {
 

@@ -23,6 +23,7 @@
         <jwt.version>0.7.0</jwt.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
