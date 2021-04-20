@@ -21,6 +21,7 @@
         <module>fei-api</module>
         <module>fei-quartz</module>
         <module>fei-pay</module>
+        <module>fei-oos</module>
         <!--        <module>renren-generator</module>-->
 
     </modules>

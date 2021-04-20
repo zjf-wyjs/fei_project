@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2018 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+
 
 package plus.feifei.datasource.aspect;
 
@@ -27,7 +21,7 @@ import java.lang.reflect.Method;
 /**
  * 多数据源，切面处理类
  *
- * 
+ *
  */
 @Aspect
 @Component
