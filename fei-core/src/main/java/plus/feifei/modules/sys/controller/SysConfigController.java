@@ -5,8 +5,8 @@ package plus.feifei.modules.sys.controller;
 
 import plus.feifei.common.annotation.SysLog;
 import plus.feifei.common.validator.ValidatorUtils;
-import plus.feifei.modules.sys.entity.SysConfigEntity;
-import plus.feifei.modules.sys.service.SysConfigService;
+import plus.feifei.sys.entity.SysConfigEntity;
+import plus.feifei.sys.service.SysConfigService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 系统配置信息
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/sys/config")

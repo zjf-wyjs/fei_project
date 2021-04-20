@@ -2,8 +2,8 @@
 
 package plus.feifei.config;
 
-import plus.feifei.modules.sys.oauth2.OAuth2Filter;
-import plus.feifei.modules.sys.oauth2.OAuth2Realm;
+import plus.feifei.sys.oauth2.OAuth2Filter;
+import plus.feifei.sys.oauth2.OAuth2Realm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * Shiro配置
  *
- * 
+ *
  */
 @Configuration
 public class ShiroConfig {

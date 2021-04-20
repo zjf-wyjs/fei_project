@@ -5,9 +5,9 @@ package plus.feifei.modules.sys.controller;
 import plus.feifei.common.annotation.SysLog;
 import plus.feifei.common.utils.RRException;
 import plus.feifei.common.utils.Constant;
-import plus.feifei.modules.sys.entity.SysMenuEntity;
-import plus.feifei.modules.sys.service.ShiroService;
-import plus.feifei.modules.sys.service.SysMenuService;
+import plus.feifei.sys.entity.SysMenuEntity;
+import plus.feifei.sys.service.ShiroService;
+import plus.feifei.sys.service.SysMenuService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.Set;
 /**
  * 系统菜单
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/sys/menu")

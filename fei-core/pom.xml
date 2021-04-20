@@ -30,11 +30,6 @@
 		<commons.configuration.version>1.10</commons.configuration.version>
 		<shiro.version>1.4.0</shiro.version>
 
-		<kaptcha.version>0.0.9</kaptcha.version>
-		<qiniu.version>7.2.23</qiniu.version>
-		<aliyun.oss.version>2.8.3</aliyun.oss.version>
-		<qcloud.cos.version>4.4</qcloud.cos.version>
-
 		<joda.time.version>2.9.9</joda.time.version>
 		<gson.version>2.8.5</gson.version>
 
@@ -60,6 +55,7 @@
 			<artifactId>fei-api</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+
 
 
 		<dependency>
@@ -131,19 +127,21 @@
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-core</artifactId>
-			<version>${shiro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
-			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>plus.feifei.sys</groupId>
+			<artifactId>fei-sys</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
 
 		<dependency>
 			<groupId>com.github.axet</groupId>
 			<artifactId>kaptcha</artifactId>
-			<version>${kaptcha.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -159,27 +157,7 @@
 			<artifactId>swagger-bootstrap-ui</artifactId>
 			<version>1.9.6</version>
 		</dependency>
-		<dependency>
-			<groupId>com.qiniu</groupId>
-			<artifactId>qiniu-java-sdk</artifactId>
-			<version>${qiniu.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.aliyun.oss</groupId>
-			<artifactId>aliyun-sdk-oss</artifactId>
-			<version>${aliyun.oss.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.qcloud</groupId>
-			<artifactId>cos_api</artifactId>
-			<version>${qcloud.cos.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>

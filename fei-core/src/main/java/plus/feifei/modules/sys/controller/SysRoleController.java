@@ -6,9 +6,9 @@ import plus.feifei.common.annotation.SysLog;
 import plus.feifei.common.utils.Constant;
 import plus.feifei.common.utils.R;
 import plus.feifei.common.validator.ValidatorUtils;
-import plus.feifei.modules.sys.entity.SysRoleEntity;
-import plus.feifei.modules.sys.service.SysRoleMenuService;
-import plus.feifei.modules.sys.service.SysRoleService;
+import plus.feifei.sys.entity.SysRoleEntity;
+import plus.feifei.sys.service.SysRoleMenuService;
+import plus.feifei.sys.service.SysRoleService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * 角色管理
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/sys/role")
