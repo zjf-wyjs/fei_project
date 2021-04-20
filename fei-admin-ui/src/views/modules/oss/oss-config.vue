@@ -74,7 +74,10 @@
       </template>
       <template v-else-if="dataForm.type === 4">
         <el-form-item label="前缀">
-          <el-input v-model="dataForm.pre" placeholder="如：sh（可选值 ，华南：gz 华北：tj 华东：sh）"></el-input>
+          <el-input v-model="dataForm.urlPrefix" placeholder="如：www.feifei.plus"></el-input>
+        </el-form-item>
+        <el-form-item label="路径前缀">
+          <el-input v-model="dataForm.localPrefix" placeholder="如 image"></el-input>
         </el-form-item>
       </template>
     </el-form>
