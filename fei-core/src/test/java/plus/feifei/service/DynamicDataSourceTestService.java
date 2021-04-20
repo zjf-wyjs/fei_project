@@ -3,7 +3,7 @@
 package plus.feifei.service;
 
 import plus.feifei.datasource.annotation.DataSource;
-import plus.feifei.modules.sys.dao.SysUserDao;
+import plus.feifei.sys.dao.SysUserDao;
 import plus.feifei.common.utils.SysUserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 测试多数据源
  *
- * 
+ *
  */
 @Service
 //@DataSource("slave1")

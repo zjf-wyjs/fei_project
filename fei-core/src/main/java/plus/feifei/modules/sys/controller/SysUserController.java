@@ -11,9 +11,9 @@ import plus.feifei.common.validator.ValidatorUtils;
 import plus.feifei.common.validator.group.AddGroup;
 import plus.feifei.common.validator.group.UpdateGroup;
 import plus.feifei.common.utils.SysUserEntity;
-import plus.feifei.modules.sys.form.PasswordForm;
-import plus.feifei.modules.sys.service.SysUserRoleService;
-import plus.feifei.modules.sys.service.SysUserService;
+import plus.feifei.sys.form.PasswordForm;
+import plus.feifei.sys.service.SysUserRoleService;
+import plus.feifei.sys.service.SysUserService;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.Sha256Hash;
@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * 系统用户
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/sys/user")

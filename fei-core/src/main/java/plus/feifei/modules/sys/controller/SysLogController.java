@@ -3,7 +3,7 @@
 package plus.feifei.modules.sys.controller;
 
 
-import plus.feifei.modules.sys.service.SysLogService;
+import plus.feifei.sys.service.SysLogService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

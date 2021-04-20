@@ -2,8 +2,9 @@
 
 package plus.feifei.config;
 
-import plus.feifei.modules.sys.oauth2.OAuth2Filter;
-import plus.feifei.modules.sys.oauth2.OAuth2Realm;
+import org.springframework.stereotype.Component;
+import plus.feifei.sys.oauth2.OAuth2Filter;
+import plus.feifei.sys.oauth2.OAuth2Realm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -20,10 +21,11 @@ import java.util.Map;
 /**
  * Shiro配置
  *
- * 
+ *
  */
 @Configuration
 public class ShiroConfig {
+
 
     @Bean("securityManager")
     public SecurityManager securityManager(OAuth2Realm oAuth2Realm) {
@@ -39,7 +41,7 @@ public class ShiroConfig {
         shiroFilter.setSecurityManager(securityManager);
 
         //oauth过滤
-        Map<String, Filter> filters = new HashMap<>();
+        Map<String, Filter> filters = new HashMap<>(8);
         filters.put("oauth2", new OAuth2Filter());
         shiroFilter.setFilters(filters);
 
@@ -54,9 +56,11 @@ public class ShiroConfig {
         filterMap.put("/swagger-resources/**", "anon");
         filterMap.put("/doc.html", "anon");
         filterMap.put("/captcha.jpg", "anon");
-        filterMap.put("/images/**", "anon");
+        filterMap.put("/imageslocal/**", "anon");
         filterMap.put("/aaa.txt", "anon");
         filterMap.put("/**", "oauth2");
+
+
         shiroFilter.setFilterChainDefinitionMap(filterMap);
 
         return shiroFilter;
