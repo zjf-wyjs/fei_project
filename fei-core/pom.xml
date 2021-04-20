@@ -45,6 +45,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+<!--			正式版需要去掉-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>plus.feifei</groupId>
 			<artifactId>fei-quartz</artifactId>

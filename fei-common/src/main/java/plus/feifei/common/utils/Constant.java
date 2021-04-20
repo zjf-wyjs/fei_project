@@ -5,7 +5,7 @@ package plus.feifei.common.utils;
 /**
  * 常量
  *
- * 
+ *
  */
 public class Constant {
 	/** 超级管理员ID */
@@ -105,7 +105,8 @@ public class Constant {
         /**
          * 腾讯云
          */
-        QCLOUD(3);
+        QCLOUD(3),
+        LOCAL_CLOUD(4);
 
         private int value;
 

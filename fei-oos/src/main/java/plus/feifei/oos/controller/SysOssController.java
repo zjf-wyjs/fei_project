@@ -5,6 +5,7 @@ package plus.feifei.oos.controller;
 import plus.feifei.common.utils.*;
 import plus.feifei.common.validator.ValidatorUtils;
 import plus.feifei.common.validator.group.AliyunGroup;
+import plus.feifei.common.validator.group.LocalGroup;
 import plus.feifei.common.validator.group.QcloudGroup;
 import plus.feifei.common.validator.group.QiniuGroup;
 import plus.feifei.oos.cloud.CloudStorageConfig;
@@ -80,8 +81,10 @@ public class SysOssController {
 		}else if(config.getType() == Constant.CloudService.QCLOUD.getValue()){
 			//校验腾讯云数据
 			ValidatorUtils.validateEntity(config, QcloudGroup.class);
+		}else  if(config.getType()==Constant.CloudService.LOCAL_CLOUD.getValue()){
+			//校验本地存储数据
+			ValidatorUtils.validateEntity(config, LocalGroup.class);
 		}
-
         sysConfigService.updateValueByKey(KEY, JsonUtils.toJson(config));
 
 		return R.ok();
