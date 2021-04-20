@@ -46,4 +46,9 @@ fei-project
 │
 │
 ├─fei-quartz 定时任务模块
+│
+├─fei-oos 对象存储模块(七牛云、腾讯云、阿里云、本地)
+│
+├─fei-sys 系统配置模块
+
 ```
