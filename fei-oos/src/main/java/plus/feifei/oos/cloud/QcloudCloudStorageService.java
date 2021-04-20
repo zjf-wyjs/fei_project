@@ -8,6 +8,7 @@ import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.request.UploadFileRequest;
 import com.qcloud.cos.sign.Credentials;
+import org.springframework.web.multipart.MultipartFile;
 import plus.feifei.common.utils.RRException;
 import org.apache.commons.io.IOUtils;
 
@@ -22,20 +23,20 @@ public class QcloudCloudStorageService extends CloudStorageService {
     private COSClient client;
 
     public QcloudCloudStorageService(CloudStorageConfig config){
-        this.config = config;
+        super(config);
 
         //初始化
         init();
     }
 
     private void init(){
-    	Credentials credentials = new Credentials(config.getQcloudAppId(), config.getQcloudSecretId(),
-                config.getQcloudSecretKey());
+    	Credentials credentials = new Credentials(getConfig().getQcloudAppId(), getConfig().getQcloudSecretId(),
+                getConfig().getQcloudSecretKey());
 
     	//初始化客户端配置
         ClientConfig clientConfig = new ClientConfig();
         //设置bucket所在的区域，华南：gz 华北：tj 华东：sh
-        clientConfig.setRegion(config.getQcloudRegion());
+        clientConfig.setRegion(getConfig().getQcloudRegion());
 
     	client = new COSClient(clientConfig, credentials);
     }
@@ -48,7 +49,7 @@ public class QcloudCloudStorageService extends CloudStorageService {
         }
 
         //上传到腾讯云
-        UploadFileRequest request = new UploadFileRequest(config.getQcloudBucketName(), path, data);
+        UploadFileRequest request = new UploadFileRequest(getConfig().getQcloudBucketName(), path, data);
         String response = client.uploadFile(request);
 
         JSONObject jsonObject = JSONObject.parseObject(response);
@@ -56,7 +57,7 @@ public class QcloudCloudStorageService extends CloudStorageService {
             throw new RRException("文件上传失败，" + jsonObject.getString("message"));
         }
 
-        return config.getQcloudDomain() + path;
+        return getConfig().getQcloudDomain() + path;
     }
 
     @Override
@@ -71,11 +72,16 @@ public class QcloudCloudStorageService extends CloudStorageService {
 
     @Override
     public String uploadSuffix(byte[] data, String suffix) {
-        return upload(data, getPath(config.getQcloudPrefix(), suffix));
+        return upload(data, getPath(getConfig().getQcloudPrefix(), suffix));
     }
 
     @Override
     public String uploadSuffix(InputStream inputStream, String suffix) {
-        return upload(inputStream, getPath(config.getQcloudPrefix(), suffix));
+        return upload(inputStream, getPath(getConfig().getQcloudPrefix(), suffix));
+    }
+
+    @Override
+    public String uploadMultipartFile(MultipartFile multipartFile, String suffix) {
+        return null;
     }
 }

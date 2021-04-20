@@ -7,6 +7,7 @@ import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import org.springframework.web.multipart.MultipartFile;
 import plus.feifei.common.utils.RRException;
 import org.apache.commons.io.IOUtils;
 
@@ -24,7 +25,7 @@ public class QiniuCloudStorageService extends CloudStorageService {
     private String token;
 
     public QiniuCloudStorageService(CloudStorageConfig config){
-        this.config = config;
+        super(config);
 
         //初始化
         init();
@@ -32,8 +33,8 @@ public class QiniuCloudStorageService extends CloudStorageService {
 
     private void init(){
         uploadManager = new UploadManager(new Configuration(Zone.autoZone()));
-        token = Auth.create(config.getQiniuAccessKey(), config.getQiniuSecretKey()).
-                uploadToken(config.getQiniuBucketName());
+        token = Auth.create(getConfig().getQiniuAccessKey(), getConfig().getQiniuSecretKey()).
+                uploadToken(getConfig().getQiniuBucketName());
     }
 
     @Override
@@ -47,7 +48,7 @@ public class QiniuCloudStorageService extends CloudStorageService {
             throw new RRException("上传文件失败，请核对七牛配置信息", e);
         }
 
-        return config.getQiniuDomain() + "/" + path;
+        return getConfig().getQiniuDomain() + "/" + path;
     }
 
     @Override
@@ -62,11 +63,16 @@ public class QiniuCloudStorageService extends CloudStorageService {
 
     @Override
     public String uploadSuffix(byte[] data, String suffix) {
-        return upload(data, getPath(config.getQiniuPrefix(), suffix));
+        return upload(data, getPath(getConfig().getQiniuPrefix(), suffix));
     }
 
     @Override
     public String uploadSuffix(InputStream inputStream, String suffix) {
-        return upload(inputStream, getPath(config.getQiniuPrefix(), suffix));
+        return upload(inputStream, getPath(getConfig().getQiniuPrefix(), suffix));
+    }
+
+    @Override
+    public String uploadMultipartFile(MultipartFile multipartFile, String suffix) {
+        return null;
     }
 }

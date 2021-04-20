@@ -3,6 +3,7 @@
 package plus.feifei.oos.cloud;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 import plus.feifei.common.utils.DateUtils;
 
 import java.io.InputStream;
@@ -10,13 +11,20 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * 云存储(支持七牛、阿里云、腾讯云、又拍云)
- *
- *
+ * 云存储(支持七牛、阿里云、腾讯云、本地)
+ * @author haha
  */
 public abstract class CloudStorageService {
     /** 云存储配置信息 */
-    CloudStorageConfig config;
+    private CloudStorageConfig config;
+
+    public CloudStorageService(CloudStorageConfig config) {
+        this.config = config;
+    }
+
+    public CloudStorageConfig getConfig() {
+        return config;
+    }
 
     /**
      * 文件路径
@@ -68,5 +76,15 @@ public abstract class CloudStorageService {
      * @return             返回http地址
      */
     public abstract String uploadSuffix(InputStream inputStream, String suffix);
+
+    /**
+     * 文件上传
+     * @param multipartFile
+     * @param suffix
+     * @return
+     */
+    public abstract String uploadMultipartFile(MultipartFile multipartFile, String suffix);
+
+
 
 }

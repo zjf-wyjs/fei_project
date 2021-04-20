@@ -111,7 +111,7 @@ public class SysOssController {
 
 		//上传文件
 		String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-		String url = OSSFactory.build().uploadSuffix(file.getBytes(), suffix);
+		String url = OSSFactory.build().uploadMultipartFile(file, suffix);
 
 		//保存文件信息
 		SysOssEntity ossEntity = new SysOssEntity();
