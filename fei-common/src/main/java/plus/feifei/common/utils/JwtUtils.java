@@ -17,7 +17,7 @@ import java.util.Date;
  *
  *
  */
-@ConfigurationProperties(prefix = "feifei.jwt")
+@ConfigurationProperties(prefix = "app.jwt")
 @Component
 public class JwtUtils {
     private Logger logger = LoggerFactory.getLogger(getClass());
