@@ -17,7 +17,7 @@ import plus.feifei.common.utils.UserContext;
 @Component
 @Slf4j
 public class ApiAspect {
-    @Pointcut("execution(public * plus.feifei.api.controller..*.*(..))")
+    @Pointcut("execution(public * plus.feifei.api.web..*.*(..))")
     public void controller(){}
     @After("controller()")
     public void after(){

@@ -1,6 +1,6 @@
 
 
-package plus.feifei.api.controller;
+package plus.feifei.api.web;
 
 
 import plus.feifei.common.validator.ValidatorUtils;
@@ -22,12 +22,12 @@ import java.util.Map;
 /**
  * APP登录授权
  *
- * 
+ *
  */
 @RestController
 @RequestMapping("/app")
 @Api("APP登录接口")
-public class AppLoginController {
+public class AppLoginApi {
     @Autowired
     private UserService userService;
     @Autowired

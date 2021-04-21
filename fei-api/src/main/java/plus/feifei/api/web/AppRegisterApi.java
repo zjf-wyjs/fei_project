@@ -1,6 +1,6 @@
 
 
-package plus.feifei.api.controller;
+package plus.feifei.api.web;
 
 
 import plus.feifei.common.utils.R;
@@ -27,7 +27,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/app")
 @Api("APP注册接口")
-public class AppRegisterController {
+public class AppRegisterApi {
     @Autowired
     private UserService userService;
 

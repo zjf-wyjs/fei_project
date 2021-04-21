@@ -1,6 +1,6 @@
 
 
-package plus.feifei.api.controller;
+package plus.feifei.api.web;
 
 
 import plus.feifei.api.adnnotation.Login;
@@ -9,7 +9,6 @@ import plus.feifei.api.interceptor.AuthorizationInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.RequestAttributes;
-import plus.feifei.common.utils.HttpContextUtils;
 import plus.feifei.common.utils.R;
 import plus.feifei.common.entity.UserEntity;
 import io.swagger.annotations.Api;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import plus.feifei.common.utils.UserContext;
 
 /**
  * APP测试接口
@@ -28,7 +26,7 @@ import plus.feifei.common.utils.UserContext;
 @RestController
 @RequestMapping("/app")
 @Api("APP测试接口")
-public class AppTestController {
+public class AppTestApi {
     @Autowired
     private NativeWebRequest request;
     @Login
