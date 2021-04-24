@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -41,7 +42,7 @@ public class AppRegisterApi {
         user.setMobile(form.getMobile());
         user.setUsername(form.getMobile());
         user.setPassword(DigestUtils.sha256Hex(form.getPassword()));
-        user.setCreateTime(new Date());
+        user.setCreateTime(LocalDate.now());
         userService.save(user);
 
         return R.ok();

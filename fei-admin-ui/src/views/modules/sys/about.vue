@@ -1,6 +1,6 @@
 <template>
 <div>
-
+  <el-button style="float: right" @click="save">保存</el-button>
   <!-- 工具栏容器 -->
   <div id="toolbar-container"></div>
 
@@ -25,6 +25,9 @@ export default {
     this.initCKEditor()
   },
   methods: {
+    save(){
+
+    },
     initCKEditor () {
       CKEditor.create(
         document.querySelector('#editor'), {

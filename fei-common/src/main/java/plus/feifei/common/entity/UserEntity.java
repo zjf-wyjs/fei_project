@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -40,6 +41,6 @@ public class UserEntity implements Serializable {
 	/**
 	 * 创建时间
 	 */
-	private Date createTime;
+	private LocalDate createTime;
 
 }
