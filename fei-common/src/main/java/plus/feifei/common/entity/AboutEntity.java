@@ -15,5 +15,5 @@ import java.time.LocalDate;
 public class AboutEntity {
     private Integer id;
     private String content;
-    private LocalDate date;
+    private LocalDate updateTime;
 }

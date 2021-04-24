@@ -26,7 +26,19 @@ export default {
   },
   methods: {
     save(){
-
+      this.$http({
+        url: this.$http.adornUrl('/sys/about/save'),
+        method: 'post',
+        data: {
+          "content":this.editor.getData()
+        }
+      }).then(({data}) => {
+        if (data && data.code === 0) {
+          this.$message.success("保存成功");
+        } else {
+          this.$message.error(data.msg)
+        }
+      })
     },
     initCKEditor () {
       CKEditor.create(
@@ -43,6 +55,18 @@ export default {
       }).catch(error => {
         console.error(error);
       });
+
+      this.$http({
+        url: this.$http.adornUrl('/sys/about/info'),
+        method: 'get',
+        data: this.$http.adornData(this.dataForm)
+      }).then(({data}) => {
+        if (data && data.code === 0) {
+          this.editor.setData(data.info.content)
+        } else {
+          this.$message.error(data.msg)
+        }
+      })
     }
   }
 }
