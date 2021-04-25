@@ -38,10 +38,15 @@
         <druid.version>1.1.13</druid.version>
         <fastjson.version>1.2.74</fastjson.version>
         <kaptcha.version>0.0.9</kaptcha.version>
+        <hutool.version>5.6.3</hutool.version>
     </properties>
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>

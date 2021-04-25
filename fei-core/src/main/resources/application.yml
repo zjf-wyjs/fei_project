@@ -63,6 +63,9 @@ mybatis-plus:
 
 
 app:
+  wx:
+    app_id: 你的app_id
+    secret: 你的secret
   redis:
     open: false
   shiro:
