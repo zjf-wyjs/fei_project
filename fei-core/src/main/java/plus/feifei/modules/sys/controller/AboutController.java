@@ -19,7 +19,7 @@ import java.time.LocalDate;
 public class AboutController extends AbstractController{
     @Autowired
     private AboutService aboutService;
-    @RequiresPermissions("sys:config:save")
+    @RequiresPermissions("sys:about:save")
     @PostMapping("/save")
     public R save(@RequestBody AboutEntity entity){
         entity.setUpdateTime(LocalDate.now());
@@ -27,7 +27,7 @@ public class AboutController extends AbstractController{
         aboutService.updateById(entity);
         return R.ok();
     }
-    @RequiresPermissions("sys:config:info")
+    @RequiresPermissions("sys:about:info")
     @GetMapping("/info")
     public R info(){
         AboutEntity r = aboutService.getById(1);
