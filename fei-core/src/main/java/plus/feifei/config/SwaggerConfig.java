@@ -30,11 +30,23 @@ public class SwaggerConfig implements WebMvcConfigurer {
             .select()
             //加了ApiOperation注解的类，才生成接口文档
             .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-            //包下的类，才生成接口文档
-            //.apis(RequestHandlerSelectors.basePackage("io.renren.controller"))
             .paths(PathSelectors.any())
-            .build()
+            .build().groupName("所有接口")
             .securitySchemes(security());
+    }
+    @Bean
+    public Docket createRestApiForAuth() {
+        return new Docket(DocumentationType.SWAGGER_2).enable(true).apiInfo(apiInfo()).select()
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.basePackage("plus.feifei.api.web"))
+                .paths(PathSelectors.any()).build().groupName("客户端接口").pathMapping("/");
+    }
+    @Bean
+    public Docket createRestAdminForAuth() {
+        return new Docket(DocumentationType.SWAGGER_2).enable(true).apiInfo(apiInfo()).select()
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.basePackage("plus.feifei.modules"))
+                .paths(PathSelectors.any()).build().groupName("后台接口").pathMapping("/");
     }
 
     private ApiInfo apiInfo() {

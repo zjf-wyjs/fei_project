@@ -27,7 +27,7 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping("/app")
-@Api("APP注册接口")
+@Api(tags = "APP注册接口")
 public class AppRegisterApi {
     @Autowired
     private UserService userService;
