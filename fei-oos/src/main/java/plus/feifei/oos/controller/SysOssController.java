@@ -91,13 +91,21 @@ public class SysOssController {
 	}
 
 	/**
-	 * 上传到本地服务器
+	 * ck编辑器图片上传接口
 	 */
-	@PostMapping("/upload/save/disk")
-	public R save(@RequestParam("file") MultipartFile file){
-		String path = fileDiskUtil.saveDisk(file);
+	@PostMapping("/upload/save/ckeditor")
+	public R save(@RequestParam("upload") MultipartFile file){
+		if (file.isEmpty()) {
+			throw new RRException("上传文件不能为空");
+		}
 
-		return R.ok().put("path",path);
+		//上传文件
+		String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+		String url = OSSFactory.build().uploadMultipartFile(file, suffix);
+
+
+
+		return R.ok().put("url", url).put("uploaded",true);
 	}
 	/**
 	 * 上传文件

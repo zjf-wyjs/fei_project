@@ -5,7 +5,7 @@
     <div id="toolbar-container"></div>
 
     <!-- 编辑器容器 -->
-    <div id="editor" style="height: 1000px">
+    <div id="editor" style="height: 700px">
       <p>This is the initial editor content.</p>
     </div>
   </div>
@@ -46,7 +46,8 @@ export default {
         document.querySelector('#editor'), {
           language: 'zh-cn',
           ckfinder: {
-            uploadUrl: '/admin/Upload/uploadUrl'
+            uploadUrl: this.$http.adornUrl(`/sys/oss/upload/save/ckeditor?token=${this.$cookie.get('token')}`),
+            name: 'file'
             // 后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
           }
         }).then(editor => {
