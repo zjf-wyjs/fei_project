@@ -11,6 +11,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -48,14 +49,14 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .apis(RequestHandlerSelectors.basePackage("plus.feifei.modules"))
                 .paths(PathSelectors.any()).build().groupName("后台接口").pathMapping("/");
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("api文档")
-            .description("客户端接口文档")
-            .termsOfServiceUrl("http://www.feifei.plus")
-            .version("0.0.1")
-            .build();
+                .title("api文档")
+                .description("客户端接口文档，基于开源项目，地址：https://gitee.com/jian_fei_zhang/fei-project.git")
+                .termsOfServiceUrl("http://www.feifei.plus")
+                .version("0.0.1")
+                .contact(new Contact("张建飞","asdfasdfd","aaa@gmail.com"))
+                .build();
     }
 
     private List<ApiKey> security() {
