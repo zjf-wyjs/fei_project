@@ -153,8 +153,10 @@
     }
     .login-main {
       position: absolute;
-      top: 30%;
-      right: 40%;
+      top: 50%;
+      left: 50%;
+      margin-left: -235px;
+      margin-top: -215px;
       padding: 50px 60px 180px;
       width: 470px;
       height: 430px;

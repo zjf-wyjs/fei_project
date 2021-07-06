@@ -1,5 +1,6 @@
 package plus.feifei.common.utils;
 
+import lombok.Cleanup;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -86,12 +87,9 @@ public class FileDiskUtil {
                     b[i]+=256;
                 }
             }
-            OutputStream out = new FileOutputStream(imgFilePath);
+            @Cleanup OutputStream out = new FileOutputStream(imgFilePath);
             out.write(b);
-            out.flush();
-            out.close();
             String imgurl=url+"images/"+tempFileName;
-            //imageService.save(imgurl);
             return R.ok().put("path",imgurl);
         } catch (IOException e) {
             e.printStackTrace();
